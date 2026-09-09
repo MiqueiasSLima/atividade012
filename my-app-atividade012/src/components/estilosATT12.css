@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Sans Serif';
+    line-height: 1.6;
+}
+
+body{
+    background-color: rgb(25, 95, 72);
+}
+
+.text-insert{
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.main-diva{
+    background-color: rgb(25, 95, 72);
+    text-align: center;
+    padding: 15%;
+}
+
+.main-text{
+    color: white;
+    font-size: 3rem;
+}
+
+.sub-text{
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-diva{
+    box-shadow: 0 4px 10px rgba(0, 200, 100, 3);
+    border-radius: 50px;
+}
+
+.li{
+    list-style: none;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #0fb8ce;
+    box-shadow: 0 2px 5px rgba(0, 100, 100, 3);
+    border-radius: 10px;
+}
+
+.default-button{
+    background-color: rgba(0, 217, 255, 0.548);
+    font-size: 1rem;
+}
+
+.default-button:hover{
+    background-color: rgba(68, 0, 253, 0.548);
+    color: white;
+}
+
+.button-remove{
+    background-color: rgba(67, 4, 214, 0.548);
+    font-size: 1rem;
+    color: white;
+    margin: 1rem;
+    padding: 1%;
+}
+
+.button-remove:hover{
+    background-color: rgba(255, 0, 0, 0.548);
+    font-size: 1rem;
+    color: white;
+    margin: 1rem;
+    padding: 1%;
+}
+
