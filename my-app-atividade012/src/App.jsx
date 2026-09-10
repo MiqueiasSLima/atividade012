@@ -1,67 +1,25 @@
-import { useState, useEffect } from 'react';
-import './components/estilosATT12.css';
+import { useState, useEffect } from 'react'
+import './components/estilosATT12.css'
+import useCarregar from './components/carregar.jsx'
+import useDefinir from './components/definir.jsx'
+import useListar from './components/listar.jsx'
 
 function App() {
-  const [formData, setFormData] = useState({
-    nome: '',
-    preco: '',
-    descricao: ''
+
+  const { carregando, setCarregando } = useCarregar();
+  const { listaProdutos, setListaProdutos, formData, setFormData } = useDefinir();
+  
+  const { handleChange, handleSubmit, removerProduto } = useListar({
+    formData,
+    setFormData,
+    listaProdutos,
+    setListaProdutos
   });
-
-  const [listaProdutos, setListaProdutos] = useState([
-    {
-      id: 1,
-      nome: "Relógio WatchCorner",
-      preco: "250.00",
-      descricao: "Relógio da marca WatchCorner 2025 aprova de água"
-    },
-    {
-      id: 2,
-      nome: "Teclado Mecânico Razer",
-      preco: "400.00",
-      descricao: "Teclado mecânico Razer de útlima geração"
-    }
-  ]);
-
-  const [carregando, setCarregando] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setCarregando(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []); 
 
   if (carregando) {
     return <p className="main-text">Carregando lista de produtos...</p>;
   }
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault(); 
-    
-    const novoProduto = {
-      ...formData,
-      id: Date.now() 
-    };
-
-    setListaProdutos((prevLista) => [...prevLista, novoProduto]);
-    setFormData({ nome: '', preco: '', descricao: '' });
-  };
-
-  const removerProduto = (idParaRemover) => {
-    setListaProdutos((prevLista) => 
-      prevLista.filter((produto) => produto.id !== idParaRemover)
-    );
-  };
-  
   return (
     <div className="main-diva">
       <h1 className="main-text">Cadastro de Produtos</h1>

@@ -1,4 +1,4 @@
-# Dependências (nunca suba a pasta node_modules)
+# Dependências
 /node_modules
 /.pnp
 .pnp.js
