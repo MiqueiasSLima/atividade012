@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-
 function useCarregar(){
     const [carregando, setCarregando] = useState(true);
 
